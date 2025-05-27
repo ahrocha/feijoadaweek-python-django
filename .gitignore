@@ -1,0 +1,43 @@
+# Ambiente virtual
+venv/
+.env
+
+# Arquivos do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos temporários de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de logs
+*.log
+
+# Arquivos do banco de dados (caso use SQLite em dev)
+*.sqlite3
+
+# Arquivos do Django
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Arquivos de migrações que podem ser gerados por engano
+**/migrations/*.pyc
+**/migrations/__pycache__/
+# você pode manter os arquivos de migração, então comente ou remova a linha abaixo se quiser versionar
+# **/migrations/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Arquivos do pytest
+htmlcov/
+.coverage
+.cache
+.pytest_cache/
