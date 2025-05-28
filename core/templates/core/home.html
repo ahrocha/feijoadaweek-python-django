@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feijoada Week</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <strong>{{ post.title }}</strong><br>
+                {{ post.content|linebreaks }}<br>
+                <small>Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}</small>
+            </li>
+        {% empty %}
+            <li>Nenhum post publicado ainda.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
