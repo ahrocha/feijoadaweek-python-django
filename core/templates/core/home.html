@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt" xml:lang="pt">
 <head>
     <title>Feijoada Week</title>
+    <meta title="Feijoada Week">
 </head>
 <body>
     <h1>Posts</h1>
     <ul>
         {% for post in posts %}
             <li>
-                <strong>{{ post.title }}</strong><br>
+                <a href="{% url 'post_detail' slug=post.slug %}">
+                    <strong>{{ post.title }}</strong>
+                </a><br>
                 {{ post.content|linebreaks }}<br>
                 <small>Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}</small>
             </li>

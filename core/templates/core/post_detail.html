@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt" xml:lang="pt">
+<head>
+    <title>{{ post.title }} | Feijoada Week</title>
+    <meta title="{{ post.title }} | Feijoada Week">
+</head>
+<body>
+    <a href="{% url 'home' %}">← Voltar</a>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content|linebreaks }}</p>
+    <small>Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}</small>
+    <br><br>
+    <a href="{% url 'home' %}">← Voltar</a>
+</body>
+</html>
