@@ -12,7 +12,6 @@
                 <a href="{% url 'post_detail' slug=post.slug %}">
                     <strong>{{ post.title }}</strong>
                 </a><br>
-                {{ post.content|linebreaks }}<br>
                 <small>Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}</small>
             </li>
         {% empty %}
