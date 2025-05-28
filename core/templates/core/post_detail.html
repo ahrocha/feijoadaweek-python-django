@@ -1,15 +1,39 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="pt" xml:lang="pt">
-<head>
+  <head>
     <title>{{ post.title }} | Feijoada Week</title>
-    <meta title="{{ post.title }} | Feijoada Week">
-</head>
-<body>
-    <a href="{% url 'home' %}">← Voltar</a>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content|linebreaks }}</p>
-    <small>Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}</small>
-    <br><br>
-    <a href="{% url 'home' %}">← Voltar</a>
-</body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+  </head>
+
+  <body class="bg-gray-50 font-serif leading-relaxed tracking-wide text-gray-800">
+    <div class="max-w-3xl mx-auto px-6 py-8">
+      
+      <!-- Botão de Voltar -->
+      <div class="mb-8">
+        <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
+      </div>
+
+      <!-- Título do Post -->
+      <h1 class="text-4xl font-bold mb-4 text-gray-900">{{ post.title }}</h1>
+
+      <!-- Conteúdo -->
+      <div class="prose prose-lg max-w-none">
+        {{ post.content|linebreaks }}
+      </div>
+
+      <!-- Data de Publicação -->
+      <div class="mt-6 text-sm text-gray-500">
+        Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}
+      </div>
+
+      <!-- Botão de Voltar (duplicado no fim) -->
+      <div class="mt-10">
+        <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
+      </div>
+    </div>
+  </body>
 </html>

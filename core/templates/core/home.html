@@ -1,22 +1,37 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="pt" xml:lang="pt">
-<head>
+  <head>
     <title>Feijoada Week</title>
-    <meta title="Feijoada Week">
-</head>
-<body>
-    <h1>Posts</h1>
-    <ul>
-        {% for post in posts %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+  </head>
+
+  <body class="bg-gray-50 font-serif leading-relaxed tracking-wide text-gray-800">
+    <div class="max-w-3xl mx-auto px-6 py-8">
+      
+      <!-- Título da Página -->
+      <header class="mb-10 text-center">
+        <h1 class="text-5xl font-bold text-gray-900">Feijoadas</h1>
+      </header>
+
+      <!-- Lista de Posts -->
+      <section>
+        <ul class="space-y-6">
+          {% for post in posts %}
             <li>
-                <a href="{% url 'post_detail' slug=post.slug %}">
-                    <strong>{{ post.title }}</strong>
-                </a><br>
-                <small>Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}</small>
+              <a href="{% url 'post_detail' slug=post.slug %}" class="block p-4 border rounded-lg hover:bg-gray-100 transition">
+                <h2 class="text-2xl font-semibold text-blue-700 hover:underline">{{ post.title }}</h2>
+              </a>
             </li>
-        {% empty %}
-            <li>Nenhum post publicado ainda.</li>
-        {% endfor %}
-    </ul>
-</body>
+          {% empty %}
+            <li class="text-gray-500 italic">Nenhum post publicado ainda.</li>
+          {% endfor %}
+        </ul>
+      </section>
+      
+    </div>
+  </body>
 </html>
