@@ -42,7 +42,11 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+      fontFamily: {
+        lobster: ['"Lobster"', 'cursive'],
+      },
+    },
     },
     plugins: [
         /**
@@ -54,5 +58,6 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/typography'),
     ],
 }
