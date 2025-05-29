@@ -14,7 +14,7 @@
 
   <body class="bg-gray-50 font-serif leading-relaxed tracking-wide text-gray-800">
     <div class="max-w-3xl mx-auto px-6 py-8">
-      
+      {% include 'header.html' %}
       <!-- Botão de Voltar -->
       <div class="mb-8">
         <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
@@ -29,9 +29,9 @@
       </div>
 
       <!-- if post.imagem exists -->
-      {% if post.image %}
+      {% if post.imagem %}
         <div class="mt-6">
-          <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full rounded-lg shadow-md">
+          <img src="{{ post.imagem }}" alt="{{ post.title }}" class="w-full rounded-lg shadow-md">
         </div>
       {% endif %}
 
