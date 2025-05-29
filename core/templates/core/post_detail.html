@@ -28,16 +28,17 @@
         Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}
       </div>
 
-      <!-- Conteúdo -->
-      <div class="prose prose-lg max-w-none">
-        {{ post.content|linebreaks }}
-      </div>
       <!-- if post.imagem exists -->
       {% if post.image %}
         <div class="mt-6">
           <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full rounded-lg shadow-md">
         </div>
       {% endif %}
+
+      <!-- Conteúdo -->
+      <div class="prose prose-lg max-w-none">
+        {{ post.content|linebreaks }}
+      </div>
 
       <!-- Botão de Voltar (duplicado no fim) -->
       <div class="mt-10">
