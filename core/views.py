@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, TemplateView
 from .models import Post
 
 class HomePageView(ListView):
@@ -16,3 +16,11 @@ class PostDetailView(DetailView):
     context_object_name = 'post'
     slug_field = 'slug'
     slug_url_kwarg = 'slug'
+
+class SobrePageView(TemplateView):
+    template_name = 'core/sobre.html'
+    context_object_name = 'sobre'
+
+class ContatoPageView(TemplateView):
+    template_name = 'core/contato.html'
+    context_object_name = 'contato'

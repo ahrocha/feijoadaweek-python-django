@@ -11,19 +11,56 @@
 <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-
   </head>
 
   <body class="bg-gray-50 font-serif leading-relaxed tracking-wide text-gray-800">
         
-        <header class="relative w-full h-48 flex items-center justify-center mb-8">
-        <img src="https://feijoadaweek.s3.us-west-2.amazonaws.com/caldeirao-feijoada.jpg"
-            alt="Caldeirão de Feijoada"
-            class="absolute inset-0 w-full h-full object-cover opacity-50 z-0">
-        <h1 class="relative z-10 text-2xl md:text-5xl font-bold text-center px-4 font-lobster">
-            Todo dia é dia de feijoada
-        </h1>
-        </header>
+<header class="relative w-full h-48 flex flex-col justify-center items-center mb-8 text-white bg-gray-800 bg-opacity-70">
+  <img src="https://feijoadaweek.s3.us-west-2.amazonaws.com/caldeirao-feijoada.jpg"
+       alt="Caldeirão de Feijoada"
+       class="absolute inset-0 w-full h-full object-cover opacity-80 z-0">
+
+  <!-- Menu -->
+  <nav class="absolute top-4 right-4 z-20">
+    <!-- Botão mobile -->
+    <div class="md:hidden">
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+              class="text-white focus:outline-none">
+        <!-- Ícone hambúrguer -->
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Itens do menu (desktop) -->
+    <ul class="hidden md:flex space-x-6 font-semibold text-lg">
+      <li><a href="/" class="hover:underline">Home</a></li>
+      <!---->
+      <li><a href="/restaurantes" class="hover:underline">Restaurantes</a></li>
+    -->
+      <li><a href="/sobre" class="hover:underline">Sobre</a></li>
+      <li><a href="/contato" class="hover:underline">Contato</a></li>
+    </ul>
+
+    <!-- Itens do menu (mobile) -->
+    <ul id="mobile-menu" class="hidden absolute right-0 mt-2 w-40 bg-white text-gray-800 rounded shadow-md p-2 space-y-2 md:hidden">
+      <li><a href="/" class="block hover:bg-gray-100 px-4 py-2 rounded">Home</a></li>
+    <!--
+      <li><a href="/restaurantes" class="block hover:bg-gray-100 px-4 py-2 rounded">Restaurantes</a></li>
+    -->
+      <li><a href="/sobre" class="block hover:bg-gray-100 px-4 py-2 rounded">Sobre</a></li>
+      <li><a href="/contato" class="block hover:bg-gray-100 px-4 py-2 rounded">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Título -->
+  <h1 class="relative z-10 text-2xl md:text-5xl font-bold text-center px-4 font-lobster mt-6 md:mt-0">
+    Todo dia é dia de feijoada
+  </h1>
+</header>
 
         <div class="max-w-3xl mx-auto px-6 py-8">
 
@@ -32,8 +69,8 @@
         </main>
         </div>
 
-    <footer>
-        <p>&copy; 2025 Feijoada Week</p>
+    <footer class="w-full h-6 justify-center items-center mb-8">
+        <p class="text-center">&copy; 2025 Feijoada Week</p>
     </footer>
   </body>
 </html>

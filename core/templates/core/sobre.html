@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Feijoada Week - Sobre{% endblock %}
+{% block content %}
+
+<section class="prose lg:prose-xl max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-4">Sobre o Projeto</h1>
+  <p>
+    O <strong>FeijoadaWeek.com.br</strong> nasceu como um projeto pessoal com dois objetivos principais: 
+    manter a prática contínua no uso do framework Django e explorar tecnologias modernas de infraestrutura, como os serviços da AWS. 
+    Ao mesmo tempo, celebra de forma leve e divertida uma paixão nacional — a feijoada!
+  </p>
+  <p>
+    Além de ser uma vitrine gastronômica com avaliações, fotos e dicas sobre os melhores lugares para comer feijoada no Brasil 
+    (começando por São Paulo), o projeto é também um laboratório técnico em constante evolução. 
+    Aqui testamos funcionalidades, padrões e integrações modernas, unindo tecnologia e cultura.
+  </p>
+  <p>
+    Acompanhe o código-fonte e as atualizações pelo repositório no GitHub:<br>
+    👉 <a href="https://github.com/ahrocha/feijoadaweek-python-django" class="text-blue-600 underline" target="_blank">github.com/ahrocha/feijoadaweek-python-django</a>
+  </p>
+
+  <hr class="my-8">
+
+  <h2 class="text-2xl font-semibold mb-2">Arquitetura e Tecnologias</h2>
+  <p>
+    A aplicação é desenvolvida em <strong>Python</strong> com o framework <strong>Django</strong>, 
+    utilizando <strong>MariaDB</strong> como banco de dados e <strong>Tailwind CSS</strong> no frontend. 
+    As imagens do site ficam hospedadas na AWS S3.
+  </p>
+
+  <h3 class="text-xl font-semibold mt-6 mb-2">Infraestrutura:</h3>
+  <ul class="list-disc list-inside">
+    <li>
+      <strong>AWS App Runner:</strong> executa o backend em Django, com CI integrado ao GitHub.
+    </li>
+    <li>
+      <strong>AWS RDS (MariaDB):</strong> banco relacional gerenciado com backups automáticos.
+    </li>
+    <li>
+      <strong>AWS S3:</strong> armazenamento público para imagens e assets estáticos.
+    </li>
+  </ul>
+</section>
+
+{% endblock %}
