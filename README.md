@@ -22,20 +22,24 @@ O projeto utiliza uma arquitetura simples e escalável baseada em serviços da A
 ```mermaid
 graph TD
     subgraph Usuário
-        browser[🧑‍💻 Navegador]
+        browser[Navegador]
     end
 
     subgraph Frontend e Backend
-        AppRunner[AWS App Runner\n(Django + Tailwind)]
+        AppRunner[AWS App Runner
+        Django + Tailwind]
     end
 
     subgraph Armazenamento
-        RDS[AWS RDS\n(MariaDB)]
-        S3[AWS S3\n(Imagens)]
+        RDS[AWS RDS
+        MariaDB]
+        S3[AWS S3
+        Imagens]
     end
 
     subgraph DevOps
-        GitHub[GitHub\n(Repositório)]
+        GitHub[GitHub
+        Repositório]
     end
 
     browser --> AppRunner
