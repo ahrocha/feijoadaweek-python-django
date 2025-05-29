@@ -1,22 +1,9 @@
-{% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="pt" xml:lang="pt">
-  <head>
-    <title>{{ post.title }} | Feijoada Week</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% tailwind_css %}
-<script defer data-domain="feijoadaweek.com.br" src="https://plausible.andreyrocha.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | Feijoada Week{% endblock %}
 
 
-  </head>
-
-  <body class="bg-gray-50 font-serif leading-relaxed tracking-wide text-gray-800">
-    <div class="max-w-3xl mx-auto px-6 py-8">
-      {% include 'header.html' %}
+{% block content %}
       <!-- Botão de Voltar -->
       <div class="mb-8">
         <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
@@ -48,6 +35,4 @@
       <div class="mt-10">
         <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
       </div>
-    </div>
-  </body>
-</html>
+{% endblock %}
