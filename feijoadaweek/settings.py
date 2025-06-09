@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'tailwind',
     'theme',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
