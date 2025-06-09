@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Feijoada Week - Página não encontrada{% endblock %}
+
+{% block content %}
+<section class="prose lg:prose-xl max-w-4xl mx-auto px-4 py-16 text-center">
+  <h1 class="text-4xl font-bold text-red-700 mb-4">404 - Página não encontrada</h1>
+  <p>
+    Ops! A página que você está procurando não foi encontrada.<br>
+    Talvez ela tenha sido removida, renomeada, ou o link esteja incorreto.
+  </p>
+
+  <p class="mt-6">
+    👉 <a href="{% url 'home' %}" class="text-blue-600 underline">Voltar para a página inicial</a>
+  </p>
+
+  <hr class="my-12">
+
+  <p class="text-sm text-gray-500">
+    Se o erro persistir, você pode conferir o <a href="https://github.com/ahrocha/feijoadaweek-python-django" target="_blank" class="underline">repositório no GitHub</a>
+    ou entrar em contato com o desenvolvedor.
+  </p>
+</section>
+{% endblock %}
