@@ -33,7 +33,7 @@ urlpatterns = [
     path('sobre/', SobrePageView.as_view(), name='sobre'),
     path('contato/', ContatoPageView.as_view(), name='contato'),
     path('restaurante/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
-    path("sitemaps.xml", sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
+    path("sitemap.xml", sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
     path("favicon.ico", RedirectView.as_view(url=static_tag("favicon.ico"), permanent=True)),
 ]
 
