@@ -28,7 +28,7 @@
 
       <!-- Conteúdo -->
       <div class="prose prose-lg max-w-none">
-        {{ post.content|linebreaks|safe }}
+        {{ post.content|safe|linebreaks }}
       </div>
 
       <!-- Botão de Voltar (duplicado no fim) -->
