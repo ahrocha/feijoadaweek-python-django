@@ -5,6 +5,7 @@ from django.urls import reverse
 class PostSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
+    protocol = "https"
 
     def items(self):
         return Post.objects.all()
@@ -13,7 +14,7 @@ class PostSitemap(Sitemap):
         return obj.published_at
 
     def location(self, obj):
-        return f"/restaurante/{obj.slug}"
+        return f"/restaurante/{obj.slug}/"
 
 class StaticViewSitemap(Sitemap):
     priority = 0.5
