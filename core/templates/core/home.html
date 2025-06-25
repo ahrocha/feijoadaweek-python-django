@@ -2,6 +2,20 @@
 
 {% block title %}Feijoada Week - Home{% endblock %}
 {% block content %}
+
+      <!-- Chamada para a página "A história da feijoada" -->
+      <section class="mb-8 p-6 bg-yellow-100 border-l-4 border-yellow-600 rounded-lg shadow-sm">
+        <h2 class="text-xl font-bold text-yellow-800 mb-2">
+          A feijoada não surgiu como você imagina.
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Conheça a verdadeira história da feijoada e surpreenda-se com suas origens.
+        </p>
+        <a href="{% url 'historia_da_feijoada' %}" class="inline-block px-4 py-2 bg-yellow-600 text-white font-semibold rounded hover:bg-yellow-700 transition">
+          Ler a história completa
+        </a>
+      </section>
+
       <!-- Lista de Posts -->
       <section>
         <ul class="space-y-6">

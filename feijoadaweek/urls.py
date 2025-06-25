@@ -17,7 +17,7 @@ from django.contrib import admin, sitemaps
 from django.contrib.sitemaps.views import sitemap
 from feijoadaweek.sitemaps import PostSitemap
 from django.urls import path
-from core.views import HomePageView, PostDetailView, SobrePageView, ContatoPageView
+from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.templatetags.static import static as static_tag
@@ -31,6 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
     path('sobre/', SobrePageView.as_view(), name='sobre'),
+    path('historia-da-feijoada/', HistoriaPageView.as_view(), name='historia_da_feijoada'),  # nova rota
     path('contato/', ContatoPageView.as_view(), name='contato'),
     path('restaurante/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
     path("sitemap.xml", sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
@@ -38,3 +39,4 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

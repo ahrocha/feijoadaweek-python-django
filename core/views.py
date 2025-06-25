@@ -24,3 +24,6 @@ class SobrePageView(TemplateView):
 class ContatoPageView(TemplateView):
     template_name = 'core/contato.html'
     context_object_name = 'contato'
+
+class HistoriaPageView(TemplateView):
+    template_name = "core/historia_da_feijoada.html"
