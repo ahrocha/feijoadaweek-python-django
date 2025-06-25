@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin, sitemaps
 from django.contrib.sitemaps.views import sitemap
-from feijoadaweek.sitemaps import PostSitemap
+from feijoadaweek.sitemaps import PostSitemap, StaticViewSitemap
 from django.urls import path
 from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView
 from django.conf import settings
@@ -25,6 +25,7 @@ from django.views.generic import RedirectView
 
 sitemaps_dict = {
     'posts': PostSitemap,
+    'static': StaticViewSitemap,
 }
 
 urlpatterns = [

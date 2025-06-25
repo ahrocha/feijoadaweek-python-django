@@ -137,4 +137,6 @@ O projeto visa unir gastronomia, cultura e tecnologia de forma leve e divertida,
 ```
 # source venv/bin/activate
 # python manage.py runserver
+# python manage.py tailwind build
+# python manage.py tailwind start
 ```

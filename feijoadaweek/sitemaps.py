@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from core.models import Post
+from django.urls import reverse
 
 class PostSitemap(Sitemap):
     changefreq = "weekly"
@@ -13,3 +14,13 @@ class PostSitemap(Sitemap):
 
     def location(self, obj):
         return f"/restaurante/{obj.slug}"
+
+class StaticViewSitemap(Sitemap):
+    priority = 0.5
+    changefreq = "monthly"
+
+    def items(self):
+        return ['home', 'sobre', 'contato', 'historia_da_feijoada']
+
+    def location(self, item):
+        return reverse(item)
