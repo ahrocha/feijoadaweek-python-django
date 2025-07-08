@@ -4,6 +4,8 @@ Todo dia é dia de feijoada!
 
 Este é um projeto pessoal que celebra a paixão brasileira por feijoadas. Aqui você encontra avaliações, fotos, dicas e informações sobre os melhores lugares para comer feijoada no Brasil, começando por São Paulo.
 
+Este readme.md foi escrito e revisado com ajuda de IA.
+
 ## Versões utilizadas
 
 - Python: 3.8.13
