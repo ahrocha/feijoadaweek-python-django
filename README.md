@@ -1,4 +1,4 @@
-# FeijoadaWeek.com.br 🫘🇧🇷
+# FeijoadaWeek.com.br
 
 Todo dia é dia de feijoada!
 
@@ -13,13 +13,13 @@ Este readme.md foi escrito e revisado com ajuda de IA.
 - MariaDB: 11.4.5
 - mysqlclient: 2.2.0
 
-## 🏗️ Arquitetura e Serviços Utilizados
+## Arquitetura e Serviços Utilizados
 
 O projeto utiliza uma arquitetura simples e escalável baseada em serviços da AWS:
 
-### ☁️ Infraestrutura
+### Infraestrutura
 
-## 📊 Diagrama de Arquitetura
+## Diagrama de Arquitetura
 
 ```mermaid
 graph TD
@@ -65,7 +65,7 @@ graph TD
   - Armazenamento de imagens dos posts e headers do site.
   - URLs públicas utilizadas diretamente nos templates.
 
-### 📦 Integração com GitHub
+### Integração com GitHub
 
 - O repositório está vinculado ao App Runner.
 - A cada push na branch principal, a aplicação é automaticamente reconstruída e publicada.
@@ -74,7 +74,7 @@ graph TD
 
 # ROADMAP
 
-## 🔥 Funcionalidades
+## Funcionalidades
 
 - Página individual para cada restaurante
   - Fotos, descrição, localização e nota
@@ -88,21 +88,21 @@ graph TD
 - Modo escuro (Dark Mode)
 - Responsivo e otimizado para mobile
 
-## 📬 Conteúdo e Engajamento
+## Conteúdo e Engajamento
 
 - Avaliações reais e imparciais
 - Favoritos para salvar seus restaurantes preferidos
 - Newsletter semanal com destaque das melhores feijoadas
 - Comentários e notas de usuários
 
-## 🎨 Estilo e Design
+## Estilo e Design
 
 - Tipografia personalizada com Tailwind CSS
 - Imagens de alta qualidade com preload inteligente
 - Ilustrações e mascotes temáticos (em breve)
 - Animações leves com Framer Motion (planejado)
 
-## 💼 Futuras Extensões
+## Futuras Extensões
 
 - Parcerias com restaurantes
 - Vitrine de promoções exclusivas
@@ -110,26 +110,26 @@ graph TD
 - Marketplace de delivery com integração a iFood ou WhatsApp
 - Sistema de recompensas para usuários ativos
 
-## 🌐 SEO e Performance
+## SEO e Performance
 
 - PWA (Progressive Web App) para uso offline e instalação no celular
 - SEO técnico otimizado (Open Graph, meta tags, sitemap.xml)
 - Analytics com Plausible (sem rastreamento invasivo)
 
-## 📲 Integrações
+## Integrações
 
 - Compartilhamento fácil para WhatsApp, Instagram e Twitter
 - Feed com publicações de redes sociais (Instagram Reels, TikTok)
 - Geolocalização para mostrar feijoadas “perto de você”
 
-## ⚙️ Tecnologias
+## Tecnologias
 
 - Backend: Django + PostgreSQL
 - Frontend: HTML + Tailwind CSS
 - Imagens hospedadas em AWS S3
 - Implantação em ambiente Linux
 
-## 📌 Objetivo
+## Objetivo
 
 O projeto visa unir gastronomia, cultura e tecnologia de forma leve e divertida, com potencial para crescer como uma referência nacional em avaliações de feijoadas.
 

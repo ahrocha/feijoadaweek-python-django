@@ -27,3 +27,7 @@ class ContatoPageView(TemplateView):
 
 class HistoriaPageView(TemplateView):
     template_name = "core/historia_da_feijoada.html"
+
+# core/feijoada_todos_os_dias
+class FeijoadaTodosOsDiasPageView(TemplateView):
+    template_name = "core/feijoada_todos_os_dias.html"
