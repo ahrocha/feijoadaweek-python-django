@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin, sitemaps
-from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps.views import sitemap, adstxt
 from feijoadaweek.sitemaps import PostSitemap, StaticViewSitemap
 from django.urls import path
 from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView, FeijoadaTodosOsDiasPageView
@@ -38,6 +38,7 @@ urlpatterns = [
     path('restaurante/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
     path("sitemap.xml", sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
     path("favicon.ico", RedirectView.as_view(url=static_tag("favicon.ico"), permanent=True)),
+    path("ads.txt", adstxt, name="ads-txt"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
