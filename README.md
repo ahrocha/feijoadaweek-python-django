@@ -114,7 +114,6 @@ graph TD
 
 - PWA (Progressive Web App) para uso offline e instalação no celular
 - SEO técnico otimizado (Open Graph, meta tags, sitemap.xml)
-- Analytics com Plausible (sem rastreamento invasivo)
 
 ## Integrações
 
