@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin, sitemaps
-from django.contrib.sitemaps.views import sitemap, adstxt
+from django.contrib.sitemaps.views import sitemap
+from feijoadaweek.otherfiles import adstxt
 from feijoadaweek.sitemaps import PostSitemap, StaticViewSitemap
 from django.urls import path
 from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView, FeijoadaTodosOsDiasPageView
