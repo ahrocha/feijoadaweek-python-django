@@ -11,5 +11,5 @@ class FaviconViewTests(TestCase):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
 
-        self.assertContains(response, "G-2SRKG8M8X1")
+        self.assertContains(response, "G-ZV52Z98X0H")
         self.assertContains(response, "gtag")
