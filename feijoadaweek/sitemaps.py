@@ -14,7 +14,7 @@ class PostSitemap(Sitemap):
         return obj.published_at
 
     def location(self, obj):
-        return f"/restaurante/{obj.slug}/"
+        return obj.get_absolute_url()
 
 class StaticViewSitemap(Sitemap):
     priority = 0.5
