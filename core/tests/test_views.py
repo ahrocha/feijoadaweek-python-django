@@ -3,18 +3,6 @@ from django.test import Client, TestCase
 
 from core.models import Post
 
-# urlpatterns = [
-#     path('', HomePageView.as_view(), name='home'),
-#     path('sobre/', SobrePageView.as_view(), name='sobre'),
-#     path('historia-da-feijoada/', HistoriaPageView.as_view(), name='historia_da_feijoada'),
-#     path('feijoada-todos-os-dias/', FeijoadaTodosOsDiasPageView.as_view(), name='feijoada_todos_os_dias'),
-#     path('contato/', ContatoPageView.as_view(), name='contato'),
-#     path('restaurante/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
-#     path("sitemap.xml", sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
-#     path("favicon.ico", RedirectView.as_view(url=static_tag("favicon.ico"), permanent=True)),
-#     path("ads.txt", adstxt, name="ads-txt"),
-# ]
-
 class ViewTests(TestCase):
     
     def setUp(self):

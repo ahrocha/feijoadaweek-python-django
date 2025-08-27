@@ -1,4 +1,3 @@
-# core/signals.py
 from django.dispatch import receiver
 from django_comments.signals import comment_will_be_posted
 

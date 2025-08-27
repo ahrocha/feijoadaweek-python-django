@@ -40,10 +40,6 @@ urlpatterns = [
     path('contato/', ContatoPageView.as_view(), name='contato'),
     path('restaurante/<slug:slug>/', PostDetailView.as_view(), name='post_detail'),
     path("sitemap.xml", sitemap, {'sitemaps': sitemaps_dict}, name='sitemap'),
-    # path(
-    #     "favicon.ico",
-    #     lambda request: serve(request, "favicon.ico", document_root=settings.STATIC_ROOT),
-    # ),    
     path("ads.txt", adstxt, name="ads-txt"),
     re_path(r'^comments/', include('django_comments.urls')),
 ]

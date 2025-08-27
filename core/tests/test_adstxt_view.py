@@ -1,9 +1,4 @@
 from django.test import Client, TestCase
-from django.conf import settings
-from django.contrib.sites.models import Site
-from core.models import Post
-
-#     path("ads.txt", adstxt, name="ads-txt"),
 
 class AdsTxtViewTests(TestCase):
 
