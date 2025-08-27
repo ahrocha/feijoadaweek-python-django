@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-==x0qb!dw5p(wr*m#294gh&gtiuaff(iwv)ch$l+d@l%$)s^3a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django.contrib.sitemaps',
+    'django_comments'
 ]
+INSTALLED_APPS += ["django.contrib.sites"]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -154,6 +157,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-INSTALLED_APPS += ["django.contrib.sites"]
-SITE_ID = 1

@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django import urls
 from django.contrib import admin, sitemaps
 from django.contrib.sitemaps.views import sitemap
 from feijoadaweek.otherfiles import adstxt
 from feijoadaweek.sitemaps import PostSitemap, StaticViewSitemap
-from django.urls import path
+from django.urls import include, path, re_path
 from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView, FeijoadaTodosOsDiasPageView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -44,6 +45,7 @@ urlpatterns = [
     #     lambda request: serve(request, "favicon.ico", document_root=settings.STATIC_ROOT),
     # ),    
     path("ads.txt", adstxt, name="ads-txt"),
+    re_path(r'^comments/', include('django_comments.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

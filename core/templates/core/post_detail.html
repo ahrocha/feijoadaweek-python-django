@@ -2,7 +2,6 @@
 
 {% block title %}{{ post.title }} | Feijoada Week{% endblock %}
 
-
 {% block content %}
       <!-- Botão de Voltar -->
       <div class="mb-8">
@@ -35,4 +34,25 @@
       <div class="mt-10">
         <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
       </div>
-{% endblock %}
+
+      {% load comments %}
+      <hr />
+      {% render_comment_list for post %}
+      <hr />
+
+      {% if request.GET.status == "comment_submitted" %}
+        <div class="alert alert-info">Seu comentário foi enviado e aguarda moderação.</div>
+      {% endif %}
+
+      {% get_comment_form for post as form %}
+        <form action="{% comment_form_target %}" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <!-- redireciona de volta para a página do post (com âncora #comments, opcional) -->
+          <input type="hidden" name="next" value="{{ post.get_absolute_url }}?status=comment_submitted#comments">
+
+          <button type="submit">Enviar comentário</button>
+        </form>
+
+      {% endblock %}

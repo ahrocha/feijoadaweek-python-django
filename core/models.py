@@ -7,6 +7,7 @@ class Post(models.Model):
     published_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, default='')
     imagem = models.CharField(max_length=500, null=True, blank=True)
+    enable_comments = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
