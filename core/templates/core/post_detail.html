@@ -45,14 +45,18 @@
       {% endif %}
 
       {% get_comment_form for post as form %}
-        <form action="{% comment_form_target %}" method="post">
+      <div id="comment-form" class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <form action="{% comment_form_target %}" method="post" class="space-y-4">
           {% csrf_token %}
           {{ form.as_p }}
 
           <!-- redireciona de volta para a página do post (com âncora #comments, opcional) -->
           <input type="hidden" name="next" value="{{ post.get_absolute_url }}?status=comment_submitted#comments">
 
-          <button type="submit">Enviar comentário</button>
+              <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                Enviar comentário
+              </button>
         </form>
+      </div>
 
       {% endblock %}
