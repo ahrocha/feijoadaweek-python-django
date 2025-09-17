@@ -134,7 +134,8 @@ O projeto visa unir gastronomia, cultura e tecnologia de forma leve e divertida,
 
 ---
 
-> Todo dia é dia de feijoada. Seja bem-vindo à Feijoada Week.
+Todo dia é dia de feijoada. Seja bem-vindo à Feijoada Week.
+
 ```
 # source venv/bin/activate
 # python manage.py runserver
