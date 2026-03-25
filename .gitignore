@@ -1,5 +1,6 @@
 # Ambiente virtual
 venv/
+.venv/
 .env
 
 # Arquivos do Python
