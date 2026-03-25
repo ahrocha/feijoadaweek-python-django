@@ -28,9 +28,6 @@ SECRET_KEY = 'django-insecure-==x0qb!dw5p(wr*m#294gh&gtiuaff(iwv)ch$l+d@l%$)s^3a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -127,9 +124,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -157,3 +154,20 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Substitua pelo seu domínio real vinculado ao App Runner
+CSRF_TRUSTED_ORIGINS = [
+    'https://feijoadaweek.com.br',
+    'https://www.feijoadaweek.com.br',
+    'https://*.awsapprunner.com'
+]
+# ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['feijoadaweek.com.br', 'www.feijoadaweek.com.br', '*.awsapprunner.com']
+
+# Informa ao Django que ele está atrás de um proxy seguro
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Garante que o cookie de CSRF só viaje via HTTPS
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
