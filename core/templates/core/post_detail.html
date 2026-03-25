@@ -27,7 +27,11 @@
 
       <!-- Conteúdo -->
       <div class="prose prose-lg max-w-none mt-6">
-        {{ post.content|safe|linebreaks }}
+        {% if post.has_html_content %}
+          {{ post.content|safe }}
+        {% else %}
+          {{ post.content|linebreaks }}
+        {% endif %}
       </div>
 
       <!-- Botão de Voltar (duplicado no fim) -->
