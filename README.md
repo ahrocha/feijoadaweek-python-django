@@ -142,3 +142,12 @@ Todo dia é dia de feijoada. Seja bem-vindo à Feijoada Week.
 # python manage.py tailwind build
 # python manage.py tailwind start
 ```
+
+## Build e push da imagem Docker
+
+```bash
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 765332704217.dkr.ecr.us-west-2.amazonaws.com
+docker build --platform linux/amd64 --build-arg ENV_FILE=.env.production -t feijoadaweek-python-django .
+docker tag feijoadaweek-python-django:latest 765332704217.dkr.ecr.us-west-2.amazonaws.com/feijoadaweek-python-django:latest
+docker push 765332704217.dkr.ecr.us-west-2.amazonaws.com/feijoadaweek-python-django:latest
+```
