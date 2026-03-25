@@ -1,0 +1,15 @@
+version: 1.0
+runtime: python312
+build:
+  commands:
+    pre_build:
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+    build:
+      - python manage.py collectstatic --noinput
+run:
+  # command: gunicorn feijoadaweek.wsgi:application
+  command: ./startup.sh
+  network:
+    port: 8000
+
