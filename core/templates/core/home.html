@@ -28,7 +28,7 @@
                   <div class="mt-6 mb-12 flex flex-col md:flex-row items-start md:items-center gap-6">
                     <!-- Texto (acima no mobile, à esquerda no desktop) -->
                     <div class="flex-1 order-1">
-                      <p class="text-gray-700">{{ post.content|truncatewords:60 }}</p>
+                      <p class="text-gray-700">{{ post.content|striptags|truncatewords:60 }}</p>
                     </div>
 
                     <!-- Imagem (abaixo no mobile, à direita no desktop) -->
