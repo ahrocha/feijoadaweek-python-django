@@ -18,6 +18,20 @@
         Publicado em: {{ post.published_at|date:"d/m/Y H:i" }}
       </div>
 
+      <!-- Like Button -->
+      <div class="mt-4 flex items-center gap-4">
+        <button 
+          id="like-button" 
+          class="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-200"
+          style="background-color: #f0f0f0; color: #333;"
+          data-post-id="{{ post.id }}"
+        >
+          <span id="heart-icon">♡</span>
+          <span id="like-count">0</span>
+        </button>
+        <span id="like-message" class="text-sm text-gray-600"></span>
+      </div>
+
       <!-- if post.imagem exists -->
       {% if post.imagem %}
         <div class="mt-6 mb-12">
@@ -64,3 +78,103 @@
       </div>
 
       {% endblock %}
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const postId = document.getElementById('like-button').getAttribute('data-post-id');
+          const likeButton = document.getElementById('like-button');
+          const likeCount = document.getElementById('like-count');
+          const heartIcon = document.getElementById('heart-icon');
+          const likeMessage = document.getElementById('like-message');
+
+          // Carregar quantidade inicial de likes
+          fetch(`/api/posts/${postId}/like/`)
+            .then(response => response.json())
+            .then(data => {
+              likeCount.textContent = data.like_count;
+              updateButtonStyle(data.liked);
+            })
+            .catch(error => {
+              console.error('Erro ao carregar likes:', error);
+              likeMessage.textContent = 'Erro ao carregar likes';
+              likeMessage.style.color = 'red';
+            });
+
+          // Click handler para toggle like
+          likeButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            fetch(`/api/posts/${postId}/like/`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
+              },
+              body: JSON.stringify({})
+            })
+            .then(response => {
+              if (response.status === 429) {
+                // Rate limit
+                return response.json().then(data => {
+                  throw new Error(data.error || 'Você só pode dar 1 like por minuto');
+                });
+              }
+              if (!response.ok) {
+                throw new Error('Erro ao processar like');
+              }
+              return response.json();
+            })
+            .then(data => {
+              likeCount.textContent = data.like_count;
+              updateButtonStyle(data.liked);
+              
+              // Mostrar mensagem de feedback
+              likeMessage.textContent = data.message || (data.liked ? 'Você gostou!' : 'Like removido');
+              likeMessage.style.color = data.liked ? 'green' : '#999';
+              
+              // Limpar mensagem após 2 segundos
+              setTimeout(() => {
+                likeMessage.textContent = '';
+              }, 2000);
+            })
+            .catch(error => {
+              console.error('Erro:', error);
+              likeMessage.textContent = error.message || 'Erro ao processar like';
+              likeMessage.style.color = 'red';
+              
+              // Limpar mensagem após 3 segundos
+              setTimeout(() => {
+                likeMessage.textContent = '';
+              }, 3000);
+            });
+          });
+
+          function updateButtonStyle(liked) {
+            if (liked) {
+              likeButton.style.backgroundColor = '#ff6b6b';
+              likeButton.style.color = 'white';
+              heartIcon.textContent = '♥';
+            } else {
+              likeButton.style.backgroundColor = '#f0f0f0';
+              likeButton.style.color = '#333';
+              heartIcon.textContent = '♡';
+            }
+          }
+
+          // Função para obter CSRF token
+          function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+              const cookies = document.cookie.split(';');
+              for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+                }
+              }
+            }
+            return cookieValue;
+          }
+        });
+      </script>

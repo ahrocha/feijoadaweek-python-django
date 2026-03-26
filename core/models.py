@@ -20,3 +20,19 @@ class Post(models.Model):
     def has_html_content(self):
         content = self.content or ''
         return content != strip_tags(content)
+
+
+class PostLike(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='likes')
+    ip_address = models.GenericIPAddressField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('post', 'ip_address')
+        indexes = [
+            models.Index(fields=['post', 'ip_address']),
+            models.Index(fields=['post', 'created_at']),
+        ]
+
+    def __str__(self):
+        return f"Like on {self.post.title} from {self.ip_address}"

@@ -33,6 +33,7 @@ sitemaps_dict = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('core.api_urls')),
     path('', HomePageView.as_view(), name='home'),
     path('sobre/', SobrePageView.as_view(), name='sobre'),
     path('historia-da-feijoada/', HistoriaPageView.as_view(), name='historia_da_feijoada'),

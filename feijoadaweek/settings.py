@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django.contrib.sitemaps',
-    'django_comments'
+    'django_comments',
+    'rest_framework'
 ]
 INSTALLED_APPS += ["django.contrib.sites"]
 SITE_ID = 1
@@ -163,7 +164,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 # ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['feijoadaweek.com.br', 'www.feijoadaweek.com.br', '*.awsapprunner.com']
+ALLOWED_HOSTS = ['feijoadaweek.com.br', 'www.feijoadaweek.com.br', '*.awsapprunner.com', 'localhost', '127.0.0.1']
 
 # Informa ao Django que ele está atrás de um proxy seguro
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
