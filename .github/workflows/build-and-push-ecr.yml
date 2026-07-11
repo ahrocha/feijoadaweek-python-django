@@ -38,6 +38,9 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
+          build-args: |
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
           tags: |
             ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
             ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
