@@ -23,7 +23,7 @@
         <ul class="space-y-6">
           {% for local in locais %}
             <li>
-              <a href="{% url 'post_detail' slug=local.slug %}" class="block p-4 border rounded-lg hover:bg-gray-100 transition">
+              <a href="{% url 'mapa_das_feijoadas_detail' slug=local.slug %}" class="block p-4 border rounded-lg hover:bg-gray-100 transition">
                 <h2 class="text-2xl font-semibold text-blue-700 hover:underline">{{ local.title }}</h2>
 
                 {% if local.imagem %}
