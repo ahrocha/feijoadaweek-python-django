@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import DetailView, ListView, TemplateView
-from .models import Post
+from .models import Post, Local
 
 class HomePageView(ListView):
     model = Post
@@ -31,3 +31,9 @@ class HistoriaPageView(TemplateView):
 # core/feijoada_todos_os_dias
 class FeijoadaTodosOsDiasPageView(TemplateView):
     template_name = "core/feijoada_todos_os_dias.html"
+
+class MapaDasFeijoadasPageView(ListView):
+    model = Local
+    template_name = "core/mapa_das_feijoadas.html"
+    context_object_name = 'locais'
+    ordering = ['-published_at']

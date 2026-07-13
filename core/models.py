@@ -36,3 +36,28 @@ class PostLike(models.Model):
 
     def __str__(self):
         return f"Like on {self.post.title} from {self.ip_address}"
+
+class Local(Post):
+    # 1. O endereço completo que a API do Google Maps vai "ler" ou "retornar"
+    endereco_completo = models.CharField(
+        max_length=255, 
+        help_text="Ex: Av. Paulista, 900 - Bela Vista, São Paulo - SP, 01310-100"
+    )
+    
+    # 2. Coordenadas exatas (Essenciais! O mapa se move baseado nelas, não no texto)
+    # Usamos DecimalField em vez de FloatField para maior precisão geográfica
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    
+    # 3. Google Place ID (Altamente recomendado para Google Maps)
+    # O Google gera um ID único para cada estabelecimento. Salvar isso evita que você
+    # gaste dinheiro re-buscando o local na API toda vez que o usuário abrir a página.
+    place_id = models.CharField(max_length=255, null=True, blank=True, unique=True)
+    
+    # 4. Componentes separados (Facilita se você quiser filtrar locais por Cidade ou Estado depois)
+    cidade = models.CharField(max_length=100, blank=True)
+    estado = models.CharField(max_length=50, blank=True) # Ou um CharField menor para a sigla (ex: max_length=2)
+    pais = models.CharField(max_length=100, default="Brasil")
+
+    def __str__(self):
+        return f"{self.title} ({self.cidade} - {self.estado})"
