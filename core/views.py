@@ -37,3 +37,10 @@ class MapaDasFeijoadasPageView(ListView):
     template_name = "core/mapa_das_feijoadas.html"
     context_object_name = 'locais'
     ordering = ['-published_at']
+
+class MapaDasFeijoadasDetailView(DetailView):
+    model = Local
+    template_name = 'core/local_detail.html'
+    context_object_name = 'local'
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
