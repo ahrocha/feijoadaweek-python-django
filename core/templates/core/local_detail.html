@@ -48,6 +48,28 @@
         {% endif %}
       </div>
 
+      <div class="prose prose-lg max-w-none mt-6">
+        {% if local.endereco_completo %}
+          {{ local.endereco_completo }}
+        {% endif %}
+
+        {% if local.endereco_completo &&  local.cidade %}
+        <br />
+        {% endif %}
+
+        {% if local.cidade %}
+          {{ local.cidade }}
+        {% endif %}
+
+        {% if local.cidade && local.estado %}
+        - 
+        {% endif %}
+
+        {% if local.estado %}
+          {{ local.estado }}
+        {% endif %}
+      </div>
+
       <!-- Botão de Voltar (duplicado no fim) -->
       <div class="mt-10">
         <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
