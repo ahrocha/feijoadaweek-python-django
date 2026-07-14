@@ -70,6 +70,24 @@
         {% endif %}
       </div>
 
+
+      {% if local.place_id %}
+          <div class="mapa-container" style="margin: 20px 0; width: 100%;">
+              <h3>Como chegar em {{ local.title }}</h3>
+              
+              <iframe
+                  width="100%"
+                  height="450"
+                  style="border:0"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmxiCK1UDrmB5EoEozgLiSnc_sCBg6TJw&q=place_id:{{ local.place_id }}">
+              </iframe>
+          </div>
+      {% endif %}
+
+
       <!-- Botão de Voltar (duplicado no fim) -->
       <div class="mt-10">
         <a href="{% url 'home' %}" class="text-blue-600 hover:underline text-sm">&larr; Voltar</a>
