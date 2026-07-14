@@ -77,14 +77,14 @@
 
       {% load comments %}
       <hr />
-      {% render_comment_list for post %}
+      {% render_comment_list for local %}
       <hr />
 
       {% if request.GET.status == "comment_submitted" %}
         <div class="alert alert-info">Seu comentário foi enviado e aguarda moderação.</div>
       {% endif %}
 
-      {% get_comment_form for post as form %}
+      {% get_comment_form for local as form %}
       <div id="comment-form" class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <form action="{% comment_form_target %}" method="post" class="space-y-4">
           {% csrf_token %}
