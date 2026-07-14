@@ -82,7 +82,7 @@
                   loading="lazy"
                   allowfullscreen
                   referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmxiCK1UDrmB5EoEozgLiSnc_sCBg6TJw&q=place_id:{{ local.place_id }}">
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAmxiCK1UDrmB5EoEozgLiSnc_sCBg6TJw&q={% if 'ChIJ' in local.place_id %}place_id:{{ local.place_id }}{% else %}{{ local.title|urlencode }}+{{ local.place_id|urlencode }}{% endif %}">
               </iframe>
           </div>
       {% endif %}
