@@ -65,6 +65,29 @@ class ViewTests(TestCase):
         self.assertContains(response, f"{current_year} Feijoada Week")
 
         self.assertContains(response, '<h1 class="text-3xl font-bold mb-6">Contato</h1>', html=True)
+        self.assertContains(response, "contato@feijoadaweek.com.br")
+
+    def test_politica_de_privacidade(self):
+        response = self.client.get("/politica-de-privacidade/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "core/politica_de_privacidade.html")
+        self.assertEqual(response.headers["Content-Type"], "text/html; charset=utf-8")
+
+        current_year = datetime.datetime.now().year
+        self.assertContains(response, f"{current_year} Feijoada Week")
+
+        self.assertContains(response, '<h1 class="text-3xl font-bold mb-2">Política de Privacidade</h1>', html=True)
+
+    def test_termos_de_uso(self):
+        response = self.client.get("/termos-de-uso/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "core/termos_de_uso.html")
+        self.assertEqual(response.headers["Content-Type"], "text/html; charset=utf-8")
+
+        current_year = datetime.datetime.now().year
+        self.assertContains(response, f"{current_year} Feijoada Week")
+
+        self.assertContains(response, '<h1 class="text-3xl font-bold mb-2">Termos de Uso</h1>', html=True)
 
     def test_post_detail(self):
         response = self.client.get("/restaurante/bar-jobim-moema/")

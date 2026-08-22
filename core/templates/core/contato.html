@@ -1,28 +1,46 @@
 {% extends "base.html" %}
 
-{% block title %}Feijoada Week - Sobre{% endblock %}
-{% block content %}
+{% block title %}Contato - Feijoada Week{% endblock %}
 
-<section class="prose lg:prose-xl max-w-3xl mx-auto px-4 py-8">
+{% block content %}
+<section class="prose lg:prose-xl max-w-4xl mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-6">Contato</h1>
-  <p>
-    Este projeto é mantido por <strong>Andrey Rocha</strong>. 
-    Fique à vontade para entrar em contato ou acompanhar meu trabalho nos links abaixo:
+
+  <p class="mb-4">
+    Tem alguma dúvida sobre nossas matérias, sugestão de restaurante com feijoada imperdível, correção de informação ou proposta de parceria? Adoraríamos ouvir você!
   </p>
 
-  <ul class="list-disc list-inside mt-4">
+  <p class="mb-6">
+    Entre em contato diretamente pelo nosso e-mail oficial:
+    <br>
+    📧 <a href="mailto:contato@feijoadaweek.com.br" class="text-blue-600 font-semibold underline text-lg">contato@feijoadaweek.com.br</a>
+  </p>
+
+  <p class="mb-4">
+    Lemos todas as mensagens recebidas e buscamos responder o mais breve possível.
+  </p>
+
+  <hr class="my-8">
+
+  <h2 class="text-2xl font-semibold mb-3">Sobre o Responsável</h2>
+  <p class="mb-4">
+    O projeto <strong>Feijoada Week</strong> é mantido por <strong>Andrey Rocha</strong>. Sinta-se à vontade para acompanhar o desenvolvimento e outros trabalhos através dos canais abaixo:
+  </p>
+
+  <ul class="list-disc list-inside space-y-2 mb-6">
     <li>
-      <a href="https://andreyrocha.com" target="_blank" class="text-blue-600 underline">andreyrocha.com</a>
+      🌐 Site pessoal: <a href="https://andreyrocha.com" target="_blank" rel="noopener" class="text-blue-600 underline">andreyrocha.com</a>
     </li>
     <li>
-      <a href="https://www.linkedin.com/in/andreyhurpiadarocha/" target="_blank" class="text-blue-600 underline">LinkedIn</a>
+      💼 LinkedIn: <a href="https://www.linkedin.com/in/andreyhurpiadarocha/" target="_blank" rel="noopener" class="text-blue-600 underline">linkedin.com/in/andreyhurpiadarocha</a>
     </li>
     <li>
-      <a href="https://github.com/ahrocha/feijoadaweek-python-django" target="_blank" class="text-blue-600 underline">GitHub do projeto</a>
+      💻 Código-fonte no GitHub: <a href="https://github.com/ahrocha/feijoadaweek-python-django" target="_blank" rel="noopener" class="text-blue-600 underline">github.com/ahrocha/feijoadaweek-python-django</a>
     </li>
   </ul>
 
-  <p class="mt-6">Sugestões, contribuições ou parcerias são sempre bem-vindas!</p>
+  <p>
+    Para entender mais sobre a origem e a proposta do nosso site, visite também nossa página <a href="{% url 'sobre' %}" class="text-blue-600 underline">Sobre</a>.
+  </p>
 </section>
-
 {% endblock %}

@@ -22,6 +22,6 @@ class SitemapViewTests(TestCase):
         response = self.client.get("/sitemap.xml", secure=True)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers["Content-Type"], "application/xml")
-        self.assertContains(response, "<url>", count=6)  # 5 static views + 1 post
+        self.assertContains(response, "<url>", count=8)  # 7 static views + 1 post
         expected_url = "https://feijoadaweek.com.br" + self.post.get_absolute_url()
         self.assertContains(response, f"<loc>{expected_url}</loc>", count=1)

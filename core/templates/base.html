@@ -79,8 +79,21 @@
         </main>
         </div>
 
-    <footer class="w-full h-6 justify-center items-center mb-8">
-        <p class="text-center">&copy; 2026 Feijoada Week</p>
+    <footer class="w-full py-8 border-t border-gray-200 mt-12 bg-white text-center text-sm text-gray-600">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="flex flex-wrap justify-center items-center gap-4 mb-3 font-medium">
+                <a href="/" class="hover:underline hover:text-gray-900">Home</a>
+                <span>&middot;</span>
+                <a href="{% url 'sobre' %}" class="hover:underline hover:text-gray-900">Sobre</a>
+                <span>&middot;</span>
+                <a href="{% url 'politica_de_privacidade' %}" class="hover:underline hover:text-gray-900">Política de Privacidade</a>
+                <span>&middot;</span>
+                <a href="{% url 'termos_de_uso' %}" class="hover:underline hover:text-gray-900">Termos de Uso</a>
+                <span>&middot;</span>
+                <a href="{% url 'contato' %}" class="hover:underline hover:text-gray-900">Contato</a>
+            </p>
+            <p class="text-xs text-gray-500">&copy; 2026 Feijoada Week. Todos os direitos reservados.</p>
+        </div>
     </footer>
     {% block extra_js %}{% endblock %}
   </body>

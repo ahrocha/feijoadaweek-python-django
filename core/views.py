@@ -28,6 +28,12 @@ class ContatoPageView(TemplateView):
 class HistoriaPageView(TemplateView):
     template_name = "core/historia_da_feijoada.html"
 
+class PoliticaDePrivacidadePageView(TemplateView):
+    template_name = "core/politica_de_privacidade.html"
+
+class TermosDeUsoPageView(TemplateView):
+    template_name = "core/termos_de_uso.html"
+
 # core/feijoada_todos_os_dias
 class FeijoadaTodosOsDiasPageView(TemplateView):
     template_name = "core/feijoada_todos_os_dias.html"

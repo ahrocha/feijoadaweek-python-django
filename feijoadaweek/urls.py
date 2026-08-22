@@ -19,7 +19,7 @@ from django.contrib.sitemaps.views import sitemap
 from feijoadaweek.otherfiles import adstxt
 from feijoadaweek.sitemaps import PostSitemap, StaticViewSitemap
 from django.urls import include, path, re_path
-from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView, FeijoadaTodosOsDiasPageView, MapaDasFeijoadasPageView, MapaDasFeijoadasDetailView
+from core.views import HistoriaPageView, HomePageView, PostDetailView, SobrePageView, ContatoPageView, FeijoadaTodosOsDiasPageView, MapaDasFeijoadasPageView, MapaDasFeijoadasDetailView, PoliticaDePrivacidadePageView, TermosDeUsoPageView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.templatetags.static import static as static_tag
@@ -36,6 +36,8 @@ urlpatterns = [
     path('api/', include('core.api_urls')),
     path('', HomePageView.as_view(), name='home'),
     path('sobre/', SobrePageView.as_view(), name='sobre'),
+    path('politica-de-privacidade/', PoliticaDePrivacidadePageView.as_view(), name='politica_de_privacidade'),
+    path('termos-de-uso/', TermosDeUsoPageView.as_view(), name='termos_de_uso'),
     path('historia-da-feijoada/', HistoriaPageView.as_view(), name='historia_da_feijoada'),
     path('mapa-das-feijoadas/', MapaDasFeijoadasPageView.as_view(), name='mapa_das_feijoadas'),
     path('restaurante-de-feijoada/<slug:slug>/', MapaDasFeijoadasDetailView.as_view(), name='mapa_das_feijoadas_detail'),

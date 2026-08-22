@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Termos de Uso - Feijoada Week{% endblock %}
+
+{% block content %}
+<section class="prose lg:prose-xl max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-2">Termos de Uso</h1>
+  <p class="text-sm text-gray-500 mb-6">Última atualização: 21 de agosto de 2026</p>
+
+  <p class="mb-4">
+    Estes Termos de Uso regem o acesso e a utilização do site <strong>Feijoada Week</strong> (<code class="bg-gray-100 px-1 py-0.5 rounded">feijoadaweek.com.br</code>). Ao navegar ou utilizar nosso site, você concorda com as condições descritas abaixo.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Sobre o Conteúdo</h2>
+  <p class="mb-4">
+    O Feijoada Week publica guias, matérias, avaliações de restaurantes e conteúdo informativo sobre feijoada e culinária. Todo o conteúdo reflete experiências, pesquisas e opiniões pessoais no momento de sua escrita.
+  </p>
+  <p class="mb-4">
+    Não garantimos a manutenção de preços, horários de funcionamento, cardápios ou disponibilidade de pratos nos estabelecimentos mencionados, pois tais informações podem ser alteradas pelos próprios restaurantes sem aviso prévio. Recomendamos verificar os detalhes diretamente com os estabelecimentos oficiais antes de sua visita.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Isenção de Responsabilidade</h2>
+  <p class="mb-4">
+    O uso das informações publicadas neste site é de inteira responsabilidade do usuário. O Feijoada Week não se responsabiliza por eventuais perdas, custos, inconveniências ou imprevistos decorrentes de decisões tomadas com base no conteúdo disponibilizado aqui.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Links Externos</h2>
+  <p class="mb-4">
+    Nosso site possui links que direcionam para páginas de terceiros (como redes sociais, sites de restaurantes e parceiros). Não exercemos controle sobre tais sites e não assumimos responsabilidade pelo conteúdo, exatidão ou políticas de privacidade de terceiros.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Propriedade Intelectual</h2>
+  <p class="mb-4">
+    Todos os textos, fotografias e elementos gráficos deste site são de propriedade do Feijoada Week, salvo indicação em contrário. O compartilhamento de links para nossos artigos é encorajado. No entanto, a cópia, reprodução integral, tradução ou distribuição de nossos conteúdos em outros meios sem prévia autorização por e-mail é proibida.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Publicidade</h2>
+  <p class="mb-4">
+    Este site exibe anúncios servidos pelo programa Google AdSense. Os conteúdos veiculados nesses anúncios são definidos de forma automatizada pelo Google e seus parceiros. Para saber mais sobre como os cookies de anúncio são gerenciados, consulte nossa <a href="{% url 'politica_de_privacidade' %}" class="text-blue-600 underline">Política de Privacidade</a>.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Alterações nos Termos</h2>
+  <p class="mb-4">
+    Reservamo-nos o direito de alterar estes Termos de Uso a qualquer momento. As alterações entram em vigor imediatamente após a sua publicação no site.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-3">Contato</h2>
+  <p class="mb-4">
+    Em caso de dúvidas sobre estes Termos de Uso, entre em contato através do e-mail 
+    <a href="mailto:contato@feijoadaweek.com.br" class="text-blue-600 underline">contato@feijoadaweek.com.br</a> 
+    ou pela nossa <a href="{% url 'contato' %}" class="text-blue-600 underline">página de contato</a>.
+  </p>
+</section>
+{% endblock %}
